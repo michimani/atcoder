@@ -1,4 +1,3 @@
-// https://atcoder.jp/contests/abc141/tasks/abc141_c
 #include <iostream>
 #include <vector>
 

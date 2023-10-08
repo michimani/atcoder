@@ -1,4 +1,3 @@
-// https://atcoder.jp/contests/abc175/tasks/abc175_c
 #include <iostream>
 
 using namespace std;
