@@ -26,9 +26,14 @@ int main()
 
   long long base = K / N;
   long long remain = K - (N * base);
-  for (long long i = 0; i < remain; i++)
+  for (auto &num : nums)
   {
-    nums_count_map[nums[i]]++;
+    if (remain == 0)
+    {
+      break;
+    }
+    nums_count_map[num]++;
+    remain--;
   }
 
   for (long long i = 0; i < N; i++)
