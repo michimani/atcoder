@@ -1,8 +1,10 @@
 #!/bin/bash
 
+## target directory to problem name
+## ex) abc/001-100/001/cpp -> abc001
 target_problem_dir=$1
-problem_name=${target_problem_dir//\//}
-problem_name=${problem_name%cpp}
+IFS='/' read -ra ADDR <<< "${target_problem_dir}"
+problem_name="${ADDR[0]}${ADDR[2]}"
 problem_number=$2
 test_dir="onlinejudge/test/${problem_name}_${problem_number}"
 base_url=${problem_name}
