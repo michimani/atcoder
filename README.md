@@ -42,6 +42,14 @@ Solutions for [AtCoder](https://atcoder.jp/) problems.
     }
     ```
 
+# Create new solutions
+
+example: create solutions for ABC 123
+
+```bash
+sh ./scripts/new-cpp.sh abc 123
+```
+
 # License
 
 [MIT](https://github.com/michimani/atcoder/blob/main/LICENSE)
