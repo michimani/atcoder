@@ -27,7 +27,7 @@ elif [[ "${contest_number}" -ge 201 ]]; then
 elif [[ "${contest_number}" -ge 101 ]]; then
   contest_range="101-200"
 else
-  contest_range="1-100"
+  contest_range="001-100"
 fi
 
 # contest_number is used for directory name. 001, 002, ...
