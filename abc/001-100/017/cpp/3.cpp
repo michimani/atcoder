@@ -10,17 +10,18 @@ int main()
   unsigned int M = 0;
   cin >> N >> M;
 
-  vector<int> ans_cand(M, 0);
+  vector<unsigned int> ans_cand(M, 0);
   for (int i = 0; i < N; i++)
   {
-    int l, r, s;
+    unsigned int l, r, s;
     cin >> l >> r >> s;
-    for (unsigned int ex = 1; ex <= M; ex++)
+    for (unsigned int ex = 1; ex < l; ex++)
     {
-      if (int(ex) < l || r < int(ex))
-      {
-        ans_cand[ex - 1] += s;
-      }
+      ans_cand[ex - 1] += s;
+    }
+    for (unsigned int ex = r + 1; ex <= M; ex++)
+    {
+      ans_cand[ex - 1] += s;
     }
   }
 
