@@ -5,12 +5,12 @@ atcoder
 
 Solutions for [AtCoder](https://atcoder.jp/) problems.
 
-# Links
+## Links
 
 - [michimani - AtCoder](https://atcoder.jp/users/michimani)
 - [michimani - AtCoder Problems](https://kenkoooo.com/atcoder/#/user/michimani)
 
-# Using online judge tools
+## Using online judge tools
 
 1. install online-judge-tools
 
@@ -42,19 +42,19 @@ Solutions for [AtCoder](https://atcoder.jp/) problems.
     }
     ```
 
-# Create new solutions
+## Create new solutions
 
 example: create solutions for ABC 123
 
 ```bash
-sh ./scripts/new-cpp.sh abc 123
+new.sh abc 123
 ```
 
-# License
+## License
 
 [MIT](https://github.com/michimani/atcoder/blob/main/LICENSE)
 
-# Author
+## Author
 
 [michimani210](https://twitter.com/michimani210)
 
