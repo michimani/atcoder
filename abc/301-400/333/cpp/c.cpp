@@ -6,42 +6,37 @@
 
 using namespace std;
 
-void gen(vector<unsigned long long> &choices, unsigned long long num, int cnt, vector<unsigned long long> &list, map<unsigned long long, bool> &used)
+void gen(vector<unsigned long long> &choices, unsigned long long num, int cnt, vector<unsigned long long> &list, map<unsigned long long, bool> &exists)
 {
-  if (list.size() == 550)
-  {
-    return;
-  }
-
   if (cnt == 3)
   {
-    if (!used[num])
+    if (!exists[num])
     {
       list.push_back(num);
-      used[num] = true;
+      exists[num] = true;
     }
     return;
   }
 
   for (auto &c : choices)
   {
-    gen(choices, num + c, cnt + 1, list, used);
+    gen(choices, num + c, cnt + 1, list, exists);
   }
 }
 
 int main()
 {
   vector<unsigned long long> choices = {1};
-  for (unsigned int d = 1; d <= 13; d++)
+  for (unsigned int d = 1; d <= 12; d++)
   {
     choices.push_back(choices[d - 1] * 10 + 1);
   }
 
   vector<unsigned long long> list;
-  map<unsigned long long, bool> used;
+  map<unsigned long long, bool> exists;
   for (auto &c : choices)
   {
-    gen(choices, c, 1, list, used);
+    gen(choices, c, 1, list, exists);
   }
 
   sort(list.begin(), list.end());
