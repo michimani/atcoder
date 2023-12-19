@@ -1,28 +1,9 @@
 #include <iostream>
 #include <vector>
-#include <cmath>
 #include <algorithm>
 #include <map>
 
 using namespace std;
-
-void gen(vector<unsigned long long> &choices, unsigned long long num, int cnt, vector<unsigned long long> &list, map<unsigned long long, bool> &exists)
-{
-  if (cnt == 3)
-  {
-    if (!exists[num])
-    {
-      list.push_back(num);
-      exists[num] = true;
-    }
-    return;
-  }
-
-  for (auto &c : choices)
-  {
-    gen(choices, num + c, cnt + 1, list, exists);
-  }
-}
 
 int main()
 {
@@ -36,7 +17,18 @@ int main()
   map<unsigned long long, bool> exists;
   for (auto &c : choices)
   {
-    gen(choices, c, 1, list, exists);
+    for (auto &cc : choices)
+    {
+      for (auto &ccc : choices)
+      {
+        unsigned long long num = c + cc + ccc;
+        if (!exists[num])
+        {
+          list.push_back(num);
+          exists[num] = true;
+        }
+      }
+    }
   }
 
   sort(list.begin(), list.end());
