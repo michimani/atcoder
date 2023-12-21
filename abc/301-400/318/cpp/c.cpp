@@ -29,14 +29,11 @@ int main()
       part_sum += f[ii];
     }
 
-    if (part_sum > p)
-    {
-      sum = sum - part_sum + p;
-    }
-    else
+    if (part_sum <= p)
     {
       break;
     }
+    sum = sum - part_sum + p;
   }
 
   cout << sum << endl;
