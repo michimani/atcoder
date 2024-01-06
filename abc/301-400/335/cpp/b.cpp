@@ -19,7 +19,6 @@ int main()
       {
         if (x + y + z <= n)
         {
-
           cout << x << " " << y << " " << z << endl;
         }
       }
