@@ -19,14 +19,9 @@ int main()
     t += ui(c == 'T');
     a += ui(c == 'A');
 
-    if (t == w)
+    if (t == w || a == w)
     {
-      cout << "T" << endl;
-      return 0;
-    }
-    if (a == w)
-    {
-      cout << "A" << endl;
+      cout << c << endl;
       return 0;
     }
   }
