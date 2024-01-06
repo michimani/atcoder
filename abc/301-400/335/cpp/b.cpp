@@ -1,7 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <map>
-#include <tuple>
 
 using namespace std;
 using ui = unsigned int;
