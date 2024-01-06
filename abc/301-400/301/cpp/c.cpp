@@ -10,7 +10,7 @@ int main()
   string s, t;
   cin >> s >> t;
 
-  set<char> atcoder = {'a', 't', 'c', 'o', 'd', 'e', 'r'};
+  const set<char> atcoder = {'a', 't', 'c', 'o', 'd', 'e', 'r'};
 
   map<char, int> sm;
   map<char, int> tm;
