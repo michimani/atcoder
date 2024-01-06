@@ -18,23 +18,8 @@ int main()
 
   for (ui i = 0; i < s.size(); i++)
   {
-    if (sm.count(s[i]) == 0)
-    {
-      sm[s[i]] = 1;
-    }
-    else
-    {
-      sm[s[i]]++;
-    }
-
-    if (tm.count(t[i]) == 0)
-    {
-      tm[t[i]] = 1;
-    }
-    else
-    {
-      tm[t[i]]++;
-    }
+    sm[s[i]]++;
+    tm[t[i]]++;
 
     if (s[i] != '@')
     {
