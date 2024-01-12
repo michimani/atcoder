@@ -11,7 +11,6 @@ int main()
   cin >> q;
 
   map<ui, ui> s;
-  ui mx = 0, mn = 0;
   for (ui i = 0; i < q; i++)
   {
     ui cmd, x, c;
@@ -34,9 +33,7 @@ int main()
       break;
 
     case 3:
-      mn = s.begin()->first;
-      mx = s.rbegin()->first;
-      cout << mx - mn << endl;
+      cout << s.rbegin()->first - s.begin()->first << endl;
       break;
 
     default:
