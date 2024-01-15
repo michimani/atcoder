@@ -11,23 +11,23 @@ int main()
   string s;
   cin >> n >> m >> s;
 
-  map<ui, vector<ui>> cidx;
+  map<ui, vector<char *>> cs;
   for (ui i = 0; i < n; i++)
   {
     ui c;
     cin >> c;
-    cidx[c].push_back(i);
+    cs[c].push_back(&s[i]);
   }
 
-  auto it = cidx.begin();
-  while (it != cidx.end())
+  auto it = cs.begin();
+  while (it != cs.end())
   {
-    char tmp = s[it->second[it->second.size() - 1]];
+    char tmp = *it->second[it->second.size() - 1];
     for (ui j = ui(it->second.size()) - 1; j > 0; j--)
     {
-      s[it->second[j]] = s[it->second[j - 1]];
+      *it->second[j] = *it->second[j - 1];
     }
-    s[it->second[0]] = tmp;
+    *it->second[0] = tmp;
 
     it++;
   }
