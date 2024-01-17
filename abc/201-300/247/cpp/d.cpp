@@ -27,10 +27,7 @@ int main()
     {
     case 1:
       cin >> x >> c;
-      Ball b;
-      b.x = x;
-      b.c = c;
-      cy.push_back(b);
+      cy.push_back({x, c});
       break;
 
     case 2:
