@@ -37,19 +37,17 @@ int main()
       cin >> c;
       while (c > 0)
       {
-        Ball fb = cy.front();
-        cy.pop_front();
-        if (fb.c > c)
+        if (cy.front().c > c)
         {
-          sum += fb.x * c;
-          fb.c -= c;
-          cy.push_front(fb);
+          sum += cy.front().x * c;
+          cy.front().c -= c;
           c = 0;
         }
         else
         {
-          c -= fb.c;
-          sum += fb.x * fb.c;
+          c -= cy.front().c;
+          sum += cy.front().x * cy.front().c;
+          cy.pop_front();
         }
       }
 
