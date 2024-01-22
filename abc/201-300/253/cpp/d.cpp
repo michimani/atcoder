@@ -10,28 +10,21 @@ int main()
   ull n, a, b;
   cin >> n >> a >> b;
 
-  if (a == 1 || b == 1)
-  {
-    cout << 0 << endl;
-    return 0;
-  }
-
   ull mn = min(a, b);
   ull mx = max(a, b);
-  ull i = mn;
-  ull j = mx;
 
   ull ans = (1 + n) * n / 2;
-  while (i <= n)
+  for (ull i = mn; i <= n; i += mn)
   {
     ans -= i;
-    i += mn;
   }
 
-  while (j <= n)
+  if (mn != mx)
   {
-    ans -= j * ull(j % mn != 0);
-    j += mx;
+    for (ull j = mx; j <= n; j += mx)
+    {
+      ans -= j * ull(j % mn != 0);
+    }
   }
 
   cout << ans << endl;
