@@ -2,7 +2,6 @@
 #include <cmath>
 
 using namespace std;
-using ui = unsigned int;
 using ull = unsigned long long;
 
 int main()
@@ -10,20 +9,17 @@ int main()
   ull n, a, b;
   cin >> n >> a >> b;
 
-  ull mn = min(a, b);
-  ull mx = max(a, b);
-
   ull ans = (1 + n) * n / 2;
-  for (ull i = mn; i <= n; i += mn)
+  for (ull i = a; i <= n; i += a)
   {
     ans -= i;
   }
 
-  if (mn != mx)
+  if (a != b)
   {
-    for (ull j = mx; j <= n; j += mx)
+    for (ull j = b; j <= n; j += b)
     {
-      ans -= j * ull(j % mn != 0);
+      ans -= j * ull(j % a != 0);
     }
   }
 
