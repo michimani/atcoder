@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include <algorithm>
 
 using namespace std;
 using ui = unsigned int;
@@ -13,14 +12,17 @@ int main()
   cin >> n;
 
   vector<int> a(n);
+  int mn = 101;
+  int mx = -101;
   for (ui i = 0; i < n; i++)
   {
     cin >> a[i];
+    mn = min(mn, a[i]);
+    mx = max(mx, a[i]);
   }
 
   ul ans = 0;
-  sort(a.begin(), a.end());
-  for (int t = a[0]; t <= a[a.size() - 1]; t++)
+  for (int t = mn; t <= mx; t++)
   {
     ul c = 0;
     for (auto aa : a)
