@@ -1,4 +1,4 @@
-AtCoder Beginner Contest 073
+AtCoder Beginner Contest 060
 ===
 
-[問題 - AtCoder Beginner Contest 073](https://atcoder.jp/contests/abc073/tasks)
+[問題 - AtCoder Beginner Contest 060](https://atcoder.jp/contests/abc060/tasks)
