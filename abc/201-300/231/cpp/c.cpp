@@ -23,25 +23,13 @@ int main()
     ui x;
     cin >> x;
 
-    if (x > a[n - 1])
-    {
-      cout << 0 << endl;
-      continue;
-    }
-
-    if (x <= a[0])
-    {
-      cout << n << endl;
-      continue;
-    }
-
     ui l = 0;
-    ui r = n - 1;
+    ui r = n;
     ui mid = 0;
-    while (true)
+    while (r - l > 1)
     {
       mid = (l + r) / 2;
-      if (a[mid] > x)
+      if (a[mid] >= x)
       {
         r = mid;
       }
@@ -49,23 +37,11 @@ int main()
       {
         l = mid;
       }
-      else
-      {
-        l = mid;
-        break;
-      }
-
-      if (r - l == 1)
-      {
-        if (x > a[l])
-        {
-          l = r;
-        }
-        break;
-      }
     }
 
-    cout << n - l << endl;
+    ui ans = x > a[l] ? n - r : n - l;
+
+    cout << ans << endl;
   }
 
   return 0;
