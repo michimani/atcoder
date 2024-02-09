@@ -7,14 +7,7 @@ int main()
   string s, t;
   cin >> s >> t;
 
-  if (s < t)
-  {
-    cout << "Yes" << endl;
-  }
-  else
-  {
-    cout << "No" << endl;
-  }
+  cout << (s < t ? "Yes" : "No") << endl;
 
   return 0;
 }
