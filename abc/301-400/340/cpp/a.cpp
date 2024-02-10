@@ -8,23 +8,13 @@ int main()
   ui a, b, d;
   cin >> a >> b >> d;
 
-  bool o = false;
-  while (true)
+  for (ui i = a; i <= b; i += d)
   {
-    if (o)
+    if (i != a)
     {
       cout << " ";
     }
-    else
-    {
-      o = true;
-    }
-    cout << a;
-    if (a == b)
-    {
-      break;
-    }
-    a += d;
+    cout << i;
   }
   cout << endl;
 
