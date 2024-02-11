@@ -35,20 +35,17 @@ int main()
 
   stack<ui> st;
   st.push(0);
-  vector<bool> checked(n, false);
   users[0].virus = true;
-  checked[0] = true;
   while (!st.empty())
   {
     ui i = st.top();
     st.pop();
     for (auto ti : um[i])
     {
-      if (!checked[ti])
+      if (!users[ti].virus)
       {
         st.push(ti);
         users[ti].virus = true;
-        checked[ti] = true;
       }
     }
   }
