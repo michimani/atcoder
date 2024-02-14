@@ -18,8 +18,6 @@ int main()
     ts[t] = s;
   }
 
-  auto it = ts.rbegin();
-  it++;
-  cout << it->second << endl;
+  cout << (++ts.rbegin())->second << endl;
   return 0;
 }
