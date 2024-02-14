@@ -7,9 +7,8 @@ using ui = unsigned int;
 
 int main()
 {
-  vector<char> in;
-  vector<char> pr;
-  vector<char> all;
+  vector<char> in, all;
+  ui pr = 0;
   for (ui i = 0; i < 10; i++)
   {
     char c;
@@ -21,42 +20,43 @@ int main()
     }
     else if (c == '?')
     {
-      pr.push_back(char(i - '0'));
+      pr++;
       all.push_back(char(i - '0'));
-    }
-    else
-    {
-      // noop
     }
   }
 
-  if (in.size() > 4 || (in.size() + pr.size() == 0))
+  if (in.size() > 4 || (in.size() + pr == 0))
   {
     cout << 0 << endl;
     return 0;
   }
 
   vector<string> sv;
-  for (auto d1 : all)
-    for (auto d2 : all)
-      for (auto d3 : all)
-        for (auto d4 : all)
-          sv.push_back({d1, d2, d3, d4});
-
+  string tmp = "";
   ui ans = 0;
   bool ok = false;
-  for (auto &s : sv)
+  for (auto &d1 : all)
   {
-    ok = true;
-    for (auto &i : in)
+    for (auto &d2 : all)
     {
-      if (s.find(i) == string::npos)
+      for (auto &d3 : all)
       {
-        ok = false;
-        break;
+        for (auto &d4 : all)
+        {
+          tmp = {d1, d2, d3, d4};
+          ok = true;
+          for (auto &i : in)
+          {
+            if (tmp.find(i) == string::npos)
+            {
+              ok = false;
+              break;
+            }
+          }
+          ans += ui(ok);
+        }
       }
     }
-    ans += ui(ok);
   }
 
   cout << ans << endl;
