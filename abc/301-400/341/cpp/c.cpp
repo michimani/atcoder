@@ -56,12 +56,6 @@ int main()
         // noop
       }
 
-      if (sh < 0 || sh >= int(h) || sw < 0 || sw >= int(w))
-      {
-        ok = false;
-        break;
-      }
-
       if (g[ui(sh)][ui(sw)] == '#')
       {
         ok = false;
