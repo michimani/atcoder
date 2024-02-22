@@ -1,79 +1,72 @@
 #include <iostream>
 #include <vector>
+#include <map>
 
 using namespace std;
+using ui = unsigned int;
 
-bool generable(unsigned int &n, unsigned int &m, vector<string> &s, vector<string> t, unsigned int pos, vector<bool> chosen)
+bool aeq(string s, string t)
 {
-  if (pos == n - 1)
+  ui diff = 0;
+  for (ui i = 0; i < s.size(); i++)
   {
+    diff += ui(s[i] != t[i]);
+    if (diff > 1)
+      return false;
+  }
+
+  return true;
+}
+
+bool ok(vector<string> &s, map<string, map<string, bool>> g, ui pos, string cur, map<string, bool> chosen)
+{
+  if (pos == s.size())
     return true;
-  }
 
-  bool ok = false;
-  for (unsigned int i = 0; i < n; i++)
+  chosen[cur] = true;
+  bool _ok = false;
+  for (auto t : s)
   {
-    if (chosen[i])
-    {
+    if (chosen[t] || !g[cur][t])
       continue;
-    }
 
-    int diff = 0;
-    for (unsigned int k = 0; k < m; k++)
-    {
-      if (s[i][k] != t[pos][k])
-      {
-        diff++;
-        if (diff > 1)
-        {
-          break;
-        }
-      }
-    }
-    if (diff == 1)
-    {
-      vector<string> t_tmp = t;
-      vector<bool> chosen_tmp = chosen;
-      t_tmp[pos + 1] = s[i];
-      chosen_tmp[i] = true;
-      ok = ok || generable(n, m, s, t_tmp, (pos + 1) % n, chosen_tmp);
-    }
+    _ok = _ok || ok(s, g, pos + 1, t, chosen);
   }
 
-  return ok;
+  return _ok;
 }
 
 int main()
 {
-  unsigned int n, m;
+  ui n, m;
   cin >> n >> m;
-  vector<string> s(n, string(m, '.'));
-  for (auto &ss : s)
-  {
-    cin >> ss;
-  }
 
-  bool ok = false;
-  for (unsigned int i = 0; i < n; i++)
+  vector<string> s(n);
+  for (auto &ss : s)
+    cin >> ss;
+
+  map<string, map<string, bool>> g;
+  for (ui i = 0; i < n; i++)
   {
-    vector<string> t(n, string(m, '.'));
-    t[0] = s[i];
-    vector<bool> chosen(n, false);
-    chosen[i] = true;
-    ok = generable(n, m, s, t, 0, chosen);
-    if (ok)
+    for (ui j = i + 1; j < n; j++)
     {
-      break;
+      bool v = aeq(s[i], s[j]);
+      g[s[i]][s[j]] = v;
+      g[s[j]][s[i]] = v;
     }
   }
 
-  if (ok)
+  map<string, bool> chosen;
+  for (auto t1 : s)
   {
-    cout << "Yes" << endl;
+    if (ok(s, g, 1, t1, chosen))
+    {
+      cout << "Yes" << endl;
+      return 0;
+    }
   }
-  else
-  {
-    cout << "No" << endl;
-  }
+
+  cout << "No" << endl;
+
   return 0;
 }
