@@ -6,14 +6,20 @@ using ui = unsigned int;
 
 int main()
 {
-  ui n;
-  cin >> n;
-  string s;
-  cin >> s;
-
   vector<char> alp(26, '.');
   for (ui i = 'a'; i <= 'z'; i++)
     alp[i - 'a'] = char(i);
+
+  ui n;
+  cin >> n;
+
+  vector<char *> s(n);
+  for (ui i = 0; i < n; i++)
+  {
+    char c;
+    cin >> c;
+    s[i] = &alp[c - 'a'];
+  }
 
   ui q;
   cin >> q;
@@ -30,7 +36,7 @@ int main()
   }
 
   for (auto ss : s)
-    cout << alp[ss - 'a'];
+    cout << *ss;
 
   cout << endl;
 
