@@ -5,15 +5,9 @@
 using namespace std;
 using ui = unsigned int;
 
-struct Student
+bool comp(pair<ui, ui> &l, pair<ui, ui> &r)
 {
-  ui i;
-  ui h;
-};
-
-bool comp(Student &l, Student &r)
-{
-  return l.h < r.h;
+  return l.second < r.second;
 }
 
 int main()
@@ -21,7 +15,7 @@ int main()
   ui n;
   cin >> n;
 
-  vector<Student> sv(n);
+  vector<pair<ui, ui>> sv(n);
   for (ui i = 0; i < n; i++)
   {
     ui a;
@@ -32,7 +26,7 @@ int main()
   sort(sv.rbegin(), sv.rend(), comp);
 
   for (auto s : sv)
-    cout << s.i << endl;
+    cout << s.first << endl;
 
   return 0;
 }
