@@ -4,14 +4,14 @@
 
 using namespace std;
 using ui = unsigned int;
-using ull = unsigned long long;
+using ll = long long;
 
 int main()
 {
   ui n;
   cin >> n;
 
-  vector<ull> a(n, 0);
+  vector<ll> a(n, 0);
   for (auto &aa : a)
     cin >> aa;
 
@@ -19,10 +19,9 @@ int main()
   cin >> q;
 
   ui cmd, i;
-  ull x;
+  ll x;
   map<ui, bool> changed;
-  ull all = 0;
-  bool all_changed = false;
+  ll all = -1;
   for (; q--;)
   {
     cin >> cmd;
@@ -31,13 +30,12 @@ int main()
     {
       cin >> x;
       all = x;
-      all_changed = true;
       changed = {};
     }
     else if (cmd == 2)
     {
       cin >> i >> x;
-      if (all_changed && !changed[i - 1])
+      if (all >= 0 && !changed[i - 1])
       {
         a[i - 1] = all;
         changed[i - 1] = true;
@@ -48,7 +46,7 @@ int main()
     else if (cmd == 3)
     {
       cin >> i;
-      if (all_changed && !changed[i - 1])
+      if (all >= 0 && !changed[i - 1])
       {
         a[i - 1] = all;
         changed[i - 1] = true;
