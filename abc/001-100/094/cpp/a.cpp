@@ -5,9 +5,9 @@ using ui = unsigned int;
 
 int main()
 {
-  int a, b, x;
+  ui a, b, x;
   cin >> a >> b >> x;
 
-  cout << (x - a >= 0 && x - a <= b ? "YES" : "NO") << endl;
+  cout << (x >= a && x <= a + b ? "YES" : "NO") << endl;
   return 0;
 }
