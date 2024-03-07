@@ -16,15 +16,10 @@ int main()
   for (ui i = 0; i < to_string(n).length(); i++)
   {
     ull r = min(d - 1, n);
-    if (i == 0)
-    {
-      ans += (((1 + r) * r) / 2) % div;
-    }
-    else
-    {
+    if (i > 0)
       r = (r - (d / 10) + 1) % div;
-      ans += ((r * (r + 1)) / 2) % div;
-    }
+
+    ans += ((r * (r + 1)) / 2) % div;
 
     d *= 10;
   }
