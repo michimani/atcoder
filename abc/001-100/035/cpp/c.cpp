@@ -9,17 +9,23 @@ int main()
   ui n, q;
   cin >> n >> q;
 
-  vector<bool> o(n, false);
+  vector<ui> o(n + 1, 0);
   ui l, r;
   for (; q--;)
   {
     cin >> l >> r;
-    for (ui i = l - 1; i < r; i++)
-      o[i] = !o[i];
+    o[l - 1]++;
+    o[r]++;
   }
 
+  o.pop_back();
+
+  ui p = 0;
   for (auto oo : o)
-    cout << ui(oo);
+  {
+    p = (oo + p) % 2;
+    cout << p;
+  }
   cout << endl;
 
   return 0;
