@@ -17,22 +17,26 @@ int main()
     cin >> aa;
 
   cin >> m;
-  vector<ull> b(m, 0);
-  vector<ull> ab;
-  for (auto &bb : b)
+  ull b;
+  map<ull, bool> ab;
+  for (; m--;)
   {
-    cin >> bb;
+    cin >> b;
     for (auto aa : a)
-      ab.push_back(aa + bb);
+      ab[aa + b] = true;
   }
 
   cin >> l;
-  vector<ull> c(l, 0);
-  for (auto &cc : c)
+  ull c;
+  for (; l--;)
   {
-    cin >> cc;
-    for (auto aabb : ab)
-      sum[aabb + cc] = true;
+    cin >> c;
+    auto it = ab.begin();
+    while (it != ab.end())
+    {
+      sum[it->first + c] = true;
+      it++;
+    }
   }
 
   cin >> q;
