@@ -10,8 +10,13 @@ int main()
   bool ex = false;
   for (auto c : s)
   {
-    ex = (c == '|' ? !ex : ex);
-    if (!ex && c != '|')
+    if (c == '|')
+    {
+      ex = !ex;
+      continue;
+    }
+
+    if (!ex)
       cout << c;
   }
 
