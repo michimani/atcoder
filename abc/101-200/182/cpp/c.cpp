@@ -32,7 +32,6 @@ int main()
     do
     {
       ui tt = total;
-      vector<ui> selected;
       for (ui k = 0; k < dn; k++)
         if (combination[k])
           tt -= dv[k];
