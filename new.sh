@@ -45,11 +45,13 @@ fi
 # create directory
 mkdir -p "./${contest_type}/${contest_range}/${contest_number}/cpp"
 
-# create a, b and c files
-touch "./${contest_type}/${contest_range}/${contest_number}/cpp/a.cpp"
-touch "./${contest_type}/${contest_range}/${contest_number}/cpp/b.cpp"
-touch "./${contest_type}/${contest_range}/${contest_number}/cpp/c.cpp"
+# create README.md
 touch "./${contest_type}/${contest_range}/${contest_number}/README.md"
+
+# create cpp files
+for file_name in "${@:3}"; do
+	touch "./${contest_type}/${contest_range}/${contest_number}/cpp/${file_name}.cpp"
+done
 
 # update README.md
 readme_content="\

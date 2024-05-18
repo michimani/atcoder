@@ -44,10 +44,10 @@ Solutions for [AtCoder](https://atcoder.jp/) problems.
 
 ## Create new solutions
 
-example: create solutions for ABC 123
+example: create solutions for A,B,C of ABC 123
 
 ```bash
-new.sh abc 123
+new.sh abc 123 a b c
 ```
 
 ## License
