@@ -24,13 +24,11 @@ int main()
   }
 
   ull ans = 0;
-  ull nnn = 0;
   for (auto &it : p)
     for (auto &itt : it.second)
-      nnn += ull(p.count(itt.first) > 0 && p[itt.first].count(it.first) > 0) * itt.second;
+      ans += ull(p.count(itt.first) > 0 && p[itt.first].count(it.first) > 0) * itt.second;
 
-  if (nnn > 0)
-    ans += nnn / 2;
+  ans /= 2;
 
   if (nn > 0)
     ans += (nn * (nn - 1)) / 2;
