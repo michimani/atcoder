@@ -2,25 +2,12 @@
 
 using namespace std;
 using ui = unsigned int;
-using ull = unsigned long long;
 
-bool is_palindrome(string str)
+bool is_palindrome(string s)
 {
-  if (str.size() < 2)
-    return true;
-
-  ull mid = str.size() / 2;
-  ull f = mid - 1, b = mid + str.size() % 2;
-  ull i = 0, j = 1;
-  while (i < j && i < mid)
-  {
-    j = str.size() - i - 1;
-
-    if (str[i] != str[j] || str[f - i] != str[b + i])
+  for (ui i = 0; i <= s.length() / 2; i++)
+    if (s[i] != s[s.length() - 1 - i])
       return false;
-
-    i++;
-  }
 
   return true;
 }
