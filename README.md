@@ -33,6 +33,20 @@ Solutions for [AtCoder](https://atcoder.jp/) problems.
             "${file}"
           ],
           "group": {
+            "kind": "test",
+            "isDefault": true
+          }
+        },
+        {
+          "type": "shell",
+          "label": "submit_to_atcoder",
+          "command": "${workspaceFolder}/onlinejudge/cpp-submit.sh",
+          "args": [
+            "${relativeFileDirname}",
+            "${fileBasenameNoExtension}",
+            "${file}"
+          ],
+          "group": {
             "kind": "build",
             "isDefault": true
           }
