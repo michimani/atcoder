@@ -61,7 +61,7 @@ Solutions for [AtCoder](https://atcoder.jp/) problems.
 example: create solutions for A,B,C of ABC 123
 
 ```bash
-new.sh abc 123 a b c
+new.sh abc 123 a,b,c
 ```
 
 ## License

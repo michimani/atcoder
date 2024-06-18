@@ -49,7 +49,8 @@ mkdir -p "./${contest_type}/${contest_range}/${contest_number}/cpp"
 touch "./${contest_type}/${contest_range}/${contest_number}/README.md"
 
 # create cpp files
-for file_name in "${@:3}"; do
+IFS=',' read -ra file_names <<< "${@:3}"
+for file_name in "${file_names[@]}"; do
 	touch "./${contest_type}/${contest_range}/${contest_number}/cpp/${file_name}.cpp"
 done
 
