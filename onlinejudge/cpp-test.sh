@@ -18,7 +18,8 @@ fi
 
 # C++ 20 (Clang 16.0.6) compile
 # https://atcoder.jp/contests/APG4b/rules?lang=ja
-clang++ -std=c++20 \
+clang++ \
+-std=c++2b \
 -Wall \
 -Wextra \
 -O2 \
@@ -29,6 +30,7 @@ clang++ -std=c++20 \
 -fconstexpr-depth=2147483647 \
 -fconstexpr-steps=2147483647 \
 -I/opt/boost/clang/include \
+-L/opt/boost/clang/lib \
 -I/opt/ac-library \
 -I/usr/include/eigen3 \
 -o ./a.out "${code_path}" \

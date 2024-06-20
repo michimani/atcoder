@@ -14,4 +14,5 @@ ac_url="https://atcoder.jp/contests/${base_url}/tasks/${problem_name}_${problem_
 oj login https://atcoder.jp/
 
 # submit
-oj s "${ac_url}" "${code_path}"
+# C++ 23 (Clang 16.0.6)
+oj s "${ac_url}" "${code_path}" --language '5031'
