@@ -22,7 +22,7 @@ int main()
     for (ui dj = 0; dj < n - m + 1; dj++)
     {
       bool ok = true;
-      for (ui i = 0; i < m; i++)
+      for (ui i = 0; i < m; i++ && ok)
       {
         for (ui j = 0; j < m; j++)
         {
@@ -32,9 +32,6 @@ int main()
             break;
           }
         }
-
-        if (!ok)
-          break;
       }
 
       if (ok)
