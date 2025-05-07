@@ -48,10 +48,14 @@ mkdir -p "./${contest_type}/${contest_range}/${contest_number}/cpp"
 # create README.md
 touch "./${contest_type}/${contest_range}/${contest_number}/README.md"
 
-# create cpp files
+# create and open cpp files
+editor_command="${EDITOR_COMMAND:-}"
 IFS=',' read -ra file_names <<< "${@:3}"
 for file_name in "${file_names[@]}"; do
 	touch "./${contest_type}/${contest_range}/${contest_number}/cpp/${file_name}.cpp"
+	if [[ "${editor_command}" != "" ]]; then
+		${editor_command} "./${contest_type}/${contest_range}/${contest_number}/cpp/${file_name}.cpp"
+	fi
 done
 
 # update README.md

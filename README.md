@@ -64,6 +64,13 @@ example: create solutions for A,B,C of ABC 123
 new.sh abc 123 a,b,c
 ```
 
+If you want to open the created files with your favorite editor, you can set the `EDITOR_COMMAND` environment variable. For example, using VSCode.
+
+```bash
+EDITOR_COMMAND=code new.sh abc 123 a,b,c
+```
+
+
 ## License
 
 [MIT](https://github.com/michimani/atcoder/blob/main/LICENSE)
