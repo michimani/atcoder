@@ -70,6 +70,22 @@ If you want to open the created files with your favorite editor, you can set the
 EDITOR_COMMAND=code new.sh abc 123 a,b,c
 ```
 
+## Troubleshooting
+
+### clang++: error: invalid linker name in argument '-fuse-ld=lld'
+
+If you use macOS, you may encounter the following error.
+
+```bash
+brew install lld
+```
+
+and add the following to your `.zshrc`
+
+```bash
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+```
+
 
 ## License
 

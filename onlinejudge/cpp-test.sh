@@ -16,9 +16,9 @@ if [ ! -e "${test_dir}" ]; then
     oj dl -d "${test_dir}" "${ac_url}"
 fi
 
-# C++ 20 (Clang 16.0.6) compile
+# C++ 23 (Clang 16.0.6) compile
 # https://atcoder.jp/contests/APG4b/rules?lang=ja
-clang++ \
+/opt/homebrew/opt/llvm/bin/clang++ \
 -std=c++2b \
 -Wall \
 -Wextra \
@@ -30,8 +30,9 @@ clang++ \
 -fconstexpr-depth=2147483647 \
 -fconstexpr-steps=2147483647 \
 -I/opt/boost/clang/include \
--L/opt/boost/clang/lib \
--I/opt/ac-library \
+-I/usr/local/include \
+-L/usr/local/lib \
 -I/usr/include/eigen3 \
--o ./a.out "${code_path}" \
+-o ./a.out \
+"${code_path}" \
 && oj test -c "./a.out " -d "${test_dir}"
