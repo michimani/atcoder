@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 
 using namespace std;
 using ui = unsigned int;
@@ -11,7 +12,7 @@ int main()
 
   vector<string> g(h, string(w, '.'));
   vector<vector<int>> dist(h, vector<int>(w, -1));
-  vector<pair<ui, ui>> exits;
+  queue<pair<ui, ui>> q;
 
   for (ui i = 0; i < h; i++)
   {
@@ -20,17 +21,17 @@ int main()
       cin >> g[i][j];
       if (g[i][j] == 'E')
       {
-        exits.push_back({i, j});
+        q.push({i, j});
         dist[i][j] = 0;
       }
     }
   }
 
   vector<pair<int, int>> dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-  vector<pair<ui, ui>> q = exits;
-  for (ui qi = 0; qi < q.size(); qi++)
+  while (!q.empty())
   {
-    auto [i, j] = q[qi];
+    auto [i, j] = q.front();
+    q.pop();
 
     for (auto [di, dj] : dirs)
     {
@@ -42,7 +43,7 @@ int main()
       if (g[ui(ni)][ui(nj)] == '.' && dist[ui(ni)][ui(nj)] == -1)
       {
         dist[ui(ni)][ui(nj)] = dist[i][j] + 1;
-        q.push_back({ni, nj});
+        q.push({ni, nj});
       }
     }
   }
