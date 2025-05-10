@@ -15,7 +15,7 @@ Solutions for [AtCoder](https://atcoder.jp/) problems.
 1. install online-judge-tools
 
     ```bash
-    pip3 install online-judge-tools
+    pip install online-judge-tools
     ```
   
 2. create `.vscode/tasks.json`
@@ -56,6 +56,21 @@ Solutions for [AtCoder](https://atcoder.jp/) problems.
     }
     ```
 
+## for C++ 23 (Clang 16.0.6)
+
+To use the same environment as AtCoder's C++ 23 (Clang 16.0.6), please install LLVM 16.0.6 as follows. (ref: https://atcoder.jp/contests/APG4b/rules)
+
+
+```bash
+brew install llvm@16
+```
+
+And add the following to your `.zshrc`
+
+```bash
+export PATH="/opt/homebrew/opt/llvm@16/bin:$PATH"
+```
+
 ## Create new solutions
 
 example: create solutions for A,B,C of ABC 123
@@ -69,23 +84,6 @@ If you want to open the created files with your favorite editor, you can set the
 ```bash
 EDITOR_COMMAND=code new.sh abc 123 a,b,c
 ```
-
-## Troubleshooting
-
-### clang++: error: invalid linker name in argument '-fuse-ld=lld'
-
-If you use macOS, you may encounter the following error.
-
-```bash
-brew install lld
-```
-
-and add the following to your `.zshrc`
-
-```bash
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-```
-
 
 ## License
 

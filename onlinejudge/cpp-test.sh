@@ -18,7 +18,7 @@ fi
 
 # C++ 23 (Clang 16.0.6) compile
 # https://atcoder.jp/contests/APG4b/rules?lang=ja
-/opt/homebrew/opt/llvm/bin/clang++ \
+/opt/homebrew/opt/llvm@16/bin/clang++ \
 -std=c++2b \
 -Wall \
 -Wextra \
@@ -29,10 +29,11 @@ fi
 -march=native \
 -fconstexpr-depth=2147483647 \
 -fconstexpr-steps=2147483647 \
--I/opt/boost/clang/include \
--I/usr/local/include \
--L/usr/local/lib \
+-I/opt/homebrew/Cellar/boost/1.88.0/include \
+-L/opt/homebrew/Cellar/boost/1.88.0/lib \
+-I/opt/ac-library \
 -I/usr/include/eigen3 \
+--ld-path=/opt/homebrew/opt/llvm@16/bin/ld64.lld \
 -o ./a.out \
 "${code_path}" \
 && oj test -c "./a.out " -d "${test_dir}"
