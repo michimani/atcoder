@@ -9,7 +9,7 @@ int main()
   ui h, w;
   cin >> h >> w;
 
-  vector<string> g(h);
+  vector<string> g(h, string(w, '.'));
   vector<vector<int>> dist(h, vector<int>(w, -1));
   vector<pair<ui, ui>> exits;
 
