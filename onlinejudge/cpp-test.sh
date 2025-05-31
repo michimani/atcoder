@@ -1,5 +1,7 @@
 #!/bin/bash
 
+oj --version
+
 ## target directory to problem name
 ## ex) abc/001-100/001/cpp -> abc001
 target_problem_dir=$1
