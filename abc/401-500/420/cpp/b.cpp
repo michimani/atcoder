@@ -5,58 +5,87 @@
 using namespace std;
 using ui = unsigned int;
 
+void add_score(vector<ui> &target_idx, vector<pair<ui, ui>> &score)
+{
+  for (auto const idx : target_idx)
+    score[idx].second++;
+}
+
 int main()
 {
   ui n, m;
   cin >> n >> m;
 
-  vector<pair<ui, ui>> p(n);
+  vector<string> s(n);
+  for (auto &ss : s)
+    cin >> ss;
+
+  vector<pair<ui, ui>> score(n);
+  vector<ui> all_idx(n);
   for (ui i = 0; i < n; i++)
-    p[i].first = i + 1;
-
-  string s = "";
-  vector<ui> z = {}, o = {};
-  vector<string> g(n);
-  for (auto &gg : g)
-    cin >> gg;
-
-  char c = '.';
-
-  for (ui mi = 0; mi < m; mi++)
   {
-    z = {}, o = {};
-    for (ui ni = 0; ni < n; ni++)
+    score[i].first = i;
+    score[i].second = 0;
+    all_idx[i] = i;
+  }
+
+  ui x = 0, y = 0;
+  vector<ui> x_idx = {}, y_idx = {};
+  for (ui i = 0; i < m; i++)
+  {
+    // vote i
+    x = 0, y = 0;
+    x_idx = {}, y_idx = {};
+    for (ui j = 0; j < n; j++)
     {
-      c = g[ni][mi];
-      if (c == '0')
-        z.push_back(ni);
-      else if (c == '1')
-        o.push_back(ni);
+      // user j
+      if (s[j][i] == '0')
+      {
+        x++;
+        x_idx.push_back(j);
+      }
+      else
+      {
+        y++;
+        y_idx.push_back(j);
+      }
     }
 
-    if (z.size() < o.size())
+    if (x == 0 || y == 0)
     {
-      for (auto j : z)
-        p[j].second++;
+      // noop
     }
-    else if (z.size() > o.size())
+    else if (x < y)
     {
-      for (auto j : o)
-        p[j].second++;
+      // 0
+      add_score(x_idx, score);
+    }
+    else if (x > y)
+    {
+      // 1
+      add_score(y_idx, score);
     }
   }
 
-  sort(p.begin(), p.end(), [](const auto &a, const auto &b)
+  sort(score.begin(), score.end(),
+       [](const pair<ui, ui> &a, const pair<ui, ui> &b)
        { return a.second > b.second; });
 
-  cout << p[0].first;
-  ui i = 1;
-  while (p[i].second == p[i - 1].second && i < n)
+  ui max = score[0].second;
+  vector<ui> mi = {score[0].first + 1};
+  for (ui i = 1; i < n; i++)
   {
-    cout << " " << p[i].first;
-    i++;
+    if (max != score[i].second)
+      break;
+
+    mi.push_back(score[i].first + 1);
   }
 
+  sort(mi.begin(), mi.end());
+
+  cout << mi[0];
+  for (ui i = 1; i < mi.size(); i++)
+    cout << " " << mi[i];
   cout << endl;
 
   return 0;
