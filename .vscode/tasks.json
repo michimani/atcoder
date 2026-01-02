@@ -1,0 +1,33 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "test_atcoder_sample",
+      "command": "${workspaceFolder}/onlinejudge/cpp-test.sh",
+      "args": [
+        "${relativeFileDirname}",
+        "${fileBasenameNoExtension}",
+        "${file}"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "submit_to_atcoder",
+      "command": "${workspaceFolder}/onlinejudge/cpp-submit.sh",
+      "args": [
+        "${relativeFileDirname}",
+        "${fileBasenameNoExtension}",
+        "${file}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ],
+  "version": "2.0.0"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "atcoder-cpp",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "vscode",
+  "mounts": [
+    "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached,readonly",
+    "source=${localEnv:HOME}/.config/git/ignore,target=/home/vscode/.config/git/ignore,type=bind,consistency=cached,readonly"
+  ],
+  "remoteEnv": {
+    "MAC_CLANG_PATH": "/usr/bin/clang-21"
+  },
+  "postStartCommand": "/bin/sh -c 'for rc in /home/vscode/.bashrc /home/vscode/.zshrc; do if [ -f \"$rc\" ] && ! grep -q \"alias g=\\\"git\\\"\" \"$rc\"; then echo \"alias g=\\\"git\\\"\" >> \"$rc\"; fi; done'",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools"
+      ],
+      "settings": {
+        "C_Cpp_Runner.cCompilerPath": "/usr/bin/clang-21",
+        "C_Cpp_Runner.cppCompilerPath": "/usr/bin/clang++-21",
+        "C_Cpp_Runner.debuggerPath": "lldb",
+        "C_Cpp_Runner.cppStandard": "c++23"
+      }
+    }
+  }
+}

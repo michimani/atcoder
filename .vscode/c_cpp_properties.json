@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "name": "devcontainer-clang-21",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "compilerPath": "/usr/bin/clang-21",
+      "cStandard": "${default}",
+      "cppStandard": "c++23",
+      "intelliSenseMode": "linux-clang-arm64",
+      "compilerArgs": [
+        "-std=c++2b",
+        "-Wall",
+        "-Wextra",
+        "-O2",
+        "-DONLINE_JUDGE",
+        "-DATCODER",
+        "-mtune=native",
+        "-march=native",
+        "-fconstexpr-depth=2147483647",
+        "-fconstexpr-steps=2147483647",
+        "-I/usr/local/include",
+        "-L/usr/local/lib",
+        "-I/usr/include/eigen3"
+      ]
+    }
+  ],
+  "version": 4
+}

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-oj --version
+set -euo pipefail
+
+oj --version >/dev/null
 
 ## target directory to problem name
 ## ex) abc/001-100/001/cpp -> abc001
@@ -18,24 +20,30 @@ if [ ! -e "${test_dir}" ]; then
     oj dl -d "${test_dir}" "${ac_url}"
 fi
 
-# C++ 23 (Clang 16.0.6) compile
-# https://atcoder.jp/contests/APG4b/rules?lang=ja
-/opt/homebrew/opt/llvm@16/bin/clang++ \
--std=c++2b \
--Wall \
--Wextra \
--O2 \
--DONLINE_JUDGE \
--DATCODER \
--mtune=native \
--march=native \
--fconstexpr-depth=2147483647 \
--fconstexpr-steps=2147483647 \
--I/opt/homebrew/Cellar/boost/1.88.0/include \
--L/opt/homebrew/Cellar/boost/1.88.0/lib \
--I/opt/ac-library \
--I/usr/include/eigen3 \
---ld-path=/opt/homebrew/opt/llvm@16/bin/ld64.lld \
--o ./a.out \
-"${code_path}" \
-&& oj test -c "./a.out " -d "${test_dir}"
+# AtCoder-style compile flags for C++23 (Clang 21.1.0)
+USER_BUILD_FLAGS=(
+    "-DATCODER"
+    "-DNOMINMAX"
+    "-DONLINE_JUDGE"
+    "-O2"
+    "-Wall"
+    "-Wextra"
+    "-fconstexpr-depth=1024"
+    "-fconstexpr-steps=524288"
+    "-fexperimental-library"
+    "-flto=auto"
+    "-ftrivial-auto-var-init=zero"
+    "-fuse-ld=lld"
+    "-march=native"
+    "-pthread"
+    "-std=gnu++23"
+    "-stdlib=libc++"
+    "-Wl,--as-needed"
+)
+
+/usr/bin/clang++-21 \
+    "${code_path}" \
+    -I/usr/include/eigen3 \
+    -o ./a.out \
+    "${USER_BUILD_FLAGS[@]}" \
+    && oj test -c "./a.out " -d "${test_dir}"
