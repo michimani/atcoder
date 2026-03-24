@@ -12,13 +12,14 @@
   "remoteEnv": {
     "MAC_CLANG_PATH": "/usr/bin/clang-21"
   },
-  "postStartCommand": "/bin/sh -c 'for rc in /home/vscode/.bashrc /home/vscode/.zshrc; do if [ -f \"$rc\" ] && ! grep -q \"alias g=\\\"git\\\"\" \"$rc\"; then echo \"alias g=\\\"git\\\"\" >> \"$rc\"; fi; done'",
+  "postStartCommand": "bash .devcontainer/post-start.sh",
   "features": {},
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-vscode.cpptools",
-        "ms-vscode.cmake-tools"
+        "ms-vscode.cmake-tools",
+        "llvm-vs-code-extensions.vscode-clangd",
       ],
       "settings": {
         "C_Cpp_Runner.cCompilerPath": "/usr/bin/clang-21",

@@ -73,9 +73,10 @@
     "statusBar.foreground": "#ffffff"
   },
   "[cpp]": {
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "never"
-    }
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.formatOnSave": true
   },
-  "C_Cpp_Runner.msvcBatchPath": ""
+  "C_Cpp.codeAnalysis.runAutomatically": true,
+  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+  "C_Cpp.intelliSenseEngine": "disabled",
 }
