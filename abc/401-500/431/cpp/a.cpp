@@ -1,11 +1,12 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
+using ull = unsigned long long;
+using ll = long long;
 
-int main()
-{
+int main() {
   ui h, b;
   cin >> h >> b;
 
