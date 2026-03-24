@@ -2,12 +2,11 @@
 
 using namespace std;
 
-int main()
-{
-  string s, t;
-  cin >> s >> t;
+int main() {
+    string s, t;
+    cin >> s >> t;
 
-  cout << (s == "AtCoder" && t == "Land" ? "Yes" : "No") << endl;
+    cout << (s == "AtCoder" && t == "Land" ? "Yes" : "No") << endl;
 
-  return 0;
+    return 0;
 }

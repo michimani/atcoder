@@ -3,26 +3,23 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  char a, b;
-  cin >> a >> b;
+    char a, b;
+    cin >> a >> b;
 
-  for (; n--;)
-  {
-    char c;
-    cin >> c;
+    for (; n--;) {
+        char c;
+        cin >> c;
 
-    if (c != a)
-      c = b;
+        if (c != a) c = b;
 
-    cout << c;
-  }
+        cout << c;
+    }
 
-  cout << endl;
+    cout << endl;
 
-  return 0;
+    return 0;
 }

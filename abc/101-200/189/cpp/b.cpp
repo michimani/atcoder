@@ -2,38 +2,32 @@
 
 using namespace std;
 
-int main()
-{
-  unsigned int n, x;
-  cin >> n >> x;
+int main() {
+    unsigned int n, x;
+    cin >> n >> x;
 
-  x *= 100;
+    x *= 100;
 
-  bool down = false;
-  unsigned int i = 1;
-  unsigned int al = 0;
-  while (i <= n)
-  {
-    unsigned int v, p;
-    cin >> v >> p;
-    al += v * p;
+    bool down = false;
+    unsigned int i = 1;
+    unsigned int al = 0;
+    while (i <= n) {
+        unsigned int v, p;
+        cin >> v >> p;
+        al += v * p;
 
-    if (al > x)
-    {
-      down = true;
-      break;
+        if (al > x) {
+            down = true;
+            break;
+        }
+        i++;
     }
-    i++;
-  }
 
-  if (down)
-  {
-    cout << i << endl;
-  }
-  else
-  {
-    cout << -1 << endl;
-  }
+    if (down) {
+        cout << i << endl;
+    } else {
+        cout << -1 << endl;
+    }
 
-  return 0;
+    return 0;
 }

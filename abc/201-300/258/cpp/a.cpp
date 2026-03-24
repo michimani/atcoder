@@ -3,25 +3,22 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui k;
-  cin >> k;
+int main() {
+    ui k;
+    cin >> k;
 
-  string h = "21";
-  string m = to_string(k);
-  if (k >= 60)
-  {
-    h = "22";
-    m = to_string(k - 60);
-  }
+    string h = "21";
+    string m = to_string(k);
+    if (k >= 60) {
+        h = "22";
+        m = to_string(k - 60);
+    }
 
-  if (m.length() == 1)
-  {
-    m = "0" + m;
-  }
+    if (m.length() == 1) {
+        m = "0" + m;
+    }
 
-  cout << h << ":" << m << endl;
+    cout << h << ":" << m << endl;
 
-  return 0;
+    return 0;
 }

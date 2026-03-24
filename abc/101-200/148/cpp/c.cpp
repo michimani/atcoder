@@ -3,25 +3,21 @@
 using namespace std;
 using ull = unsigned long long;
 
-ull gcd(ull a, ull b)
-{
-  if (b == 0)
-    return a;
+ull gcd(ull a, ull b) {
+    if (b == 0) return a;
 
-  return gcd(b, a % b);
+    return gcd(b, a % b);
 }
 
-ull lcm(ull a, ull b)
-{
-  ull hcf = gcd(a, b);
-  return (a * b) / hcf;
+ull lcm(ull a, ull b) {
+    ull hcf = gcd(a, b);
+    return (a * b) / hcf;
 }
 
-int main()
-{
-  ull a, b;
-  cin >> a >> b;
+int main() {
+    ull a, b;
+    cin >> a >> b;
 
-  cout << lcm(a, b) << endl;
-  return 0;
+    cout << lcm(a, b) << endl;
+    return 0;
 }

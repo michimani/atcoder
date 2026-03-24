@@ -4,37 +4,32 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  int x;
-  ui n;
-  cin >> x >> n;
+int main() {
+    int x;
+    ui n;
+    cin >> x >> n;
 
-  map<int, bool> p;
-  for (; n--;)
-  {
-    int pp;
-    cin >> pp;
-    p[pp] = true;
-  }
-
-  int d = 0;
-  while (true)
-  {
-    if (!p[x - d])
-    {
-      cout << x - d << endl;
-      return 0;
+    map<int, bool> p;
+    for (; n--;) {
+        int pp;
+        cin >> pp;
+        p[pp] = true;
     }
 
-    if (!p[x + d])
-    {
-      cout << x + d << endl;
-      return 0;
+    int d = 0;
+    while (true) {
+        if (!p[x - d]) {
+            cout << x - d << endl;
+            return 0;
+        }
+
+        if (!p[x + d]) {
+            cout << x + d << endl;
+            return 0;
+        }
+
+        d++;
     }
 
-    d++;
-  }
-
-  return 0;
+    return 0;
 }

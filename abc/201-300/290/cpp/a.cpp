@@ -3,26 +3,23 @@
 
 using namespace std;
 
-int main()
-{
-  unsigned int n, m;
-  cin >> n >> m;
+int main() {
+    unsigned int n, m;
+    cin >> n >> m;
 
-  vector<unsigned int> a(n, 0);
-  for (auto &aa : a)
-  {
-    cin >> aa;
-  }
+    vector<unsigned int> a(n, 0);
+    for (auto& aa : a) {
+        cin >> aa;
+    }
 
-  unsigned int sum = 0;
-  for (unsigned int i = 0; i < m; i++)
-  {
-    unsigned int b;
-    cin >> b;
+    unsigned int sum = 0;
+    for (unsigned int i = 0; i < m; i++) {
+        unsigned int b;
+        cin >> b;
 
-    sum += a[b - 1];
-  }
+        sum += a[b - 1];
+    }
 
-  cout << sum << endl;
-  return 0;
+    cout << sum << endl;
+    return 0;
 }

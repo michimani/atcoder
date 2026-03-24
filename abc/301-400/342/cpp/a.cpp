@@ -1,31 +1,27 @@
 #include <iostream>
-#include <vector>
 #include <map>
+#include <vector>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  string s;
-  cin >> s;
+int main() {
+    string s;
+    cin >> s;
 
-  map<char, vector<ui>> cm;
+    map<char, vector<ui>> cm;
 
-  for (ui i = 1; i <= s.size(); i++)
-    cm[s[i - 1]].push_back(i);
+    for (ui i = 1; i <= s.size(); i++) cm[s[i - 1]].push_back(i);
 
-  auto it = cm.begin();
-  while (it != cm.end())
-  {
-    if (it->second.size() == 1)
-    {
-      cout << it->second[0] << endl;
-      return 0;
+    auto it = cm.begin();
+    while (it != cm.end()) {
+        if (it->second.size() == 1) {
+            cout << it->second[0] << endl;
+            return 0;
+        }
+
+        it++;
     }
 
-    it++;
-  }
-
-  return 0;
+    return 0;
 }

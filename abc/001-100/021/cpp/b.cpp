@@ -1,34 +1,31 @@
 #include <iostream>
-#include <vector>
 #include <map>
+#include <vector>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
-  ui a, b;
-  cin >> a >> b;
-  ui k;
-  cin >> k;
+int main() {
+    ui n;
+    cin >> n;
+    ui a, b;
+    cin >> a >> b;
+    ui k;
+    cin >> k;
 
-  vector<ui> p(k, 0);
-  map<ui, bool> visited = {{a, true}, {b, true}};
-  for (ui i = 0; i < k; i++)
-  {
-    cin >> p[i];
+    vector<ui> p(k, 0);
+    map<ui, bool> visited = {{a, true}, {b, true}};
+    for (ui i = 0; i < k; i++) {
+        cin >> p[i];
 
-    if (visited.count(p[i]) > 0)
-    {
-      cout << "NO" << endl;
-      return 0;
+        if (visited.count(p[i]) > 0) {
+            cout << "NO" << endl;
+            return 0;
+        }
+
+        visited[p[i]] = true;
     }
 
-    visited[p[i]] = true;
-  }
-
-  cout << "YES" << endl;
-  return 0;
+    cout << "YES" << endl;
+    return 0;
 }

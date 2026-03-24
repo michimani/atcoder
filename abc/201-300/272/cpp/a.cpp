@@ -3,19 +3,17 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  ui ans = 0;
-  for (; n--;)
-  {
-    ui a;
-    cin >> a;
-    ans += a;
-  }
+    ui ans = 0;
+    for (; n--;) {
+        ui a;
+        cin >> a;
+        ans += a;
+    }
 
-  cout << ans << endl;
-  return 0;
+    cout << ans << endl;
+    return 0;
 }

@@ -3,12 +3,11 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n, k;
-  cin >> n >> k;
+int main() {
+    ui n, k;
+    cin >> n >> k;
 
-  cout << ui(n % k != 0) << endl;
+    cout << ui(n % k != 0) << endl;
 
-  return 0;
+    return 0;
 }

@@ -1,25 +1,22 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
-  int x, y, n;
-  cin >> x >> y >> n;
+int main() {
+    int x, y, n;
+    cin >> x >> y >> n;
 
-  int ans = 10000;
-  for (int xc = 0; xc <= n; xc++)
-  {
-    int yc = n - xc;
-    if (yc % 3 != 0)
-    {
-      continue;
+    int ans = 10000;
+    for (int xc = 0; xc <= n; xc++) {
+        int yc = n - xc;
+        if (yc % 3 != 0) {
+            continue;
+        }
+
+        ans = min(ans, x * xc + y * (yc / 3));
     }
 
-    ans = min(ans, x * xc + y * (yc / 3));
-  }
-
-  cout << ans << endl;
-  return 0;
+    cout << ans << endl;
+    return 0;
 }

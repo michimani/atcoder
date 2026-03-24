@@ -3,17 +3,15 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui l = 3;
-  for (; l--;)
-  {
-    string s;
-    cin >> s;
-    cout << char(s[0] - 32);
-  }
+int main() {
+    ui l = 3;
+    for (; l--;) {
+        string s;
+        cin >> s;
+        cout << char(s[0] - 32);
+    }
 
-  cout << endl;
+    cout << endl;
 
-  return 0;
+    return 0;
 }

@@ -1,16 +1,15 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
-  string s;
-  cin >> s;
+int main() {
+    string s;
+    cin >> s;
 
-  sort(s.begin(), s.end());
+    sort(s.begin(), s.end());
 
-  cout << s << endl;
+    cout << s << endl;
 
-  return 0;
+    return 0;
 }

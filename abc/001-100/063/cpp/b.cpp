@@ -3,24 +3,21 @@
 
 using namespace std;
 
-int main()
-{
-  string s;
-  cin >> s;
+int main() {
+    string s;
+    cin >> s;
 
-  map<char, bool> m;
-  for (auto c : s)
-  {
-    if (m.count(c) > 0)
-    {
-      cout << "no" << endl;
-      return 0;
+    map<char, bool> m;
+    for (auto c : s) {
+        if (m.count(c) > 0) {
+            cout << "no" << endl;
+            return 0;
+        }
+
+        m[c] = true;
     }
 
-    m[c] = true;
-  }
+    cout << "yes" << endl;
 
-  cout << "yes" << endl;
-
-  return 0;
+    return 0;
 }

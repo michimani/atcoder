@@ -1,24 +1,21 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui k;
-  cin >> k;
+int main() {
+    ui k;
+    cin >> k;
 
-  string s;
-  cin >> s;
+    string s;
+    cin >> s;
 
-  for (ui i = 0; i < min(k, ui(s.length())); i++)
-    cout << s[i];
+    for (ui i = 0; i < min(k, ui(s.length())); i++) cout << s[i];
 
-  if (s.length() > k)
-    cout << "...";
+    if (s.length() > k) cout << "...";
 
-  cout << endl;
+    cout << endl;
 
-  return 0;
+    return 0;
 }

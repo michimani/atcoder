@@ -1,13 +1,12 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
-  int a, b;
-  cin >> a >> b;
+int main() {
+    int a, b;
+    cin >> a >> b;
 
-  cout << max(0, b - a + 1) << endl;
-  return 0;
+    cout << max(0, b - a + 1) << endl;
+    return 0;
 }

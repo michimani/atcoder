@@ -4,23 +4,20 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  map<string, bool> s;
-  for (ui i = 0; i < 4; i++)
-  {
-    string ss;
-    cin >> ss;
+int main() {
+    map<string, bool> s;
+    for (ui i = 0; i < 4; i++) {
+        string ss;
+        cin >> ss;
 
-    if (s[ss])
-    {
-      cout << "No" << endl;
-      return 0;
+        if (s[ss]) {
+            cout << "No" << endl;
+            return 0;
+        }
+
+        s[ss] = true;
     }
 
-    s[ss] = true;
-  }
-
-  cout << "Yes" << endl;
-  return 0;
+    cout << "Yes" << endl;
+    return 0;
 }

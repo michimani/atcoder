@@ -20,6 +20,7 @@
         "ms-vscode.cpptools",
         "ms-vscode.cmake-tools",
         "llvm-vs-code-extensions.vscode-clangd",
+        "michimani.cpp-unused-includes-remover",
       ],
       "settings": {
         "C_Cpp_Runner.cCompilerPath": "/usr/bin/clang-21",

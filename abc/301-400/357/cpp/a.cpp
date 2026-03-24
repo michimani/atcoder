@@ -3,29 +3,24 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n, m;
-  cin >> n >> m;
+int main() {
+    ui n, m;
+    cin >> n >> m;
 
-  ui a = 0;
-  for (; n--;)
-  {
-    ui h;
-    cin >> h;
+    ui a = 0;
+    for (; n--;) {
+        ui h;
+        cin >> h;
 
-    if (m >= h)
-    {
-      m -= h;
-      a++;
+        if (m >= h) {
+            m -= h;
+            a++;
+        } else {
+            break;
+        }
     }
-    else
-    {
-      break;
-    }
-  }
 
-  cout << a << endl;
+    cout << a << endl;
 
-  return 0;
+    return 0;
 }

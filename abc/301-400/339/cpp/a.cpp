@@ -2,24 +2,19 @@
 
 using namespace std;
 
-int main()
-{
-  string s;
-  cin >> s;
+int main() {
+    string s;
+    cin >> s;
 
-  string ans = "";
-  for (auto c : s)
-  {
-    if (c == '.')
-    {
-      ans = "";
+    string ans = "";
+    for (auto c : s) {
+        if (c == '.') {
+            ans = "";
+        } else {
+            ans += c;
+        }
     }
-    else
-    {
-      ans += c;
-    }
-  }
 
-  cout << ans << endl;
-  return 0;
+    cout << ans << endl;
+    return 0;
 }

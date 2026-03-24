@@ -1,31 +1,28 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n, t;
-  cin >> n >> t;
+int main() {
+    ui n, t;
+    cin >> n >> t;
 
-  ui ans = 1000;
-  bool tle = true;
-  for (; n--;)
-  {
-    ui c, tt;
-    cin >> c >> tt;
-    if (tt > t)
-      continue;
+    ui ans = 1000;
+    bool tle = true;
+    for (; n--;) {
+        ui c, tt;
+        cin >> c >> tt;
+        if (tt > t) continue;
 
-    tle = false;
-    ans = min(ans, c);
-  }
+        tle = false;
+        ans = min(ans, c);
+    }
 
-  if (tle)
-    cout << "TLE" << endl;
-  else
-    cout << ans << endl;
+    if (tle)
+        cout << "TLE" << endl;
+    else
+        cout << ans << endl;
 
-  return 0;
+    return 0;
 }

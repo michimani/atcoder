@@ -1,27 +1,25 @@
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  const double by = 380000.0;
+    const double by = 380000.0;
 
-  double t = 0;
-  for (; n--;)
-  {
-    double x;
-    string u;
-    cin >> x >> u;
+    double t = 0;
+    for (; n--;) {
+        double x;
+        string u;
+        cin >> x >> u;
 
-    t += (u == "JPY" ? x : x * by);
-  }
+        t += (u == "JPY" ? x : x * by);
+    }
 
-  cout << fixed << setprecision(6) << t << endl;
+    cout << fixed << setprecision(6) << t << endl;
 
-  return 0;
+    return 0;
 }

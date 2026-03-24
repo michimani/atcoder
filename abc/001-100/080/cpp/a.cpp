@@ -2,10 +2,9 @@
 
 using namespace std;
 
-int main()
-{
-  int n, a, b;
-  cin >> n >> a >> b;
+int main() {
+    int n, a, b;
+    cin >> n >> a >> b;
 
-  cout << min(a * n, b) << endl;
+    cout << min(a * n, b) << endl;
 }

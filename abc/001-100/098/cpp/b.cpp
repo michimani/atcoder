@@ -1,41 +1,37 @@
+#include <cmath>
 #include <iostream>
 #include <map>
-#include <cmath>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  map<char, ui> c;
-  string s(n, '.');
-  for (auto &ss : s)
-  {
-    cin >> ss;
-    c[ss]++;
-  }
-
-  ui ans = 0;
-  for (ui i = 1; i < n - 1; i++)
-  {
-    map<char, bool> t;
-    map<char, ui> tc = c;
-    for (ui j = 0; j < i; j++)
-    {
-      tc[s[j]]--;
-      if (tc[s[j]] > 0)
-        t[s[j]] = true;
-      else
-        t.erase(s[j]);
+    map<char, ui> c;
+    string s(n, '.');
+    for (auto& ss : s) {
+        cin >> ss;
+        c[ss]++;
     }
 
-    ans = max(ans, ui(t.size()));
-  }
+    ui ans = 0;
+    for (ui i = 1; i < n - 1; i++) {
+        map<char, bool> t;
+        map<char, ui> tc = c;
+        for (ui j = 0; j < i; j++) {
+            tc[s[j]]--;
+            if (tc[s[j]] > 0)
+                t[s[j]] = true;
+            else
+                t.erase(s[j]);
+        }
 
-  cout << ans << endl;
+        ans = max(ans, ui(t.size()));
+    }
 
-  return 0;
+    cout << ans << endl;
+
+    return 0;
 }

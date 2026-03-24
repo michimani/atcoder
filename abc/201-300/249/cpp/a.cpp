@@ -1,24 +1,23 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui a, b, c, d, e, f, x;
-  cin >> a >> b >> c >> d >> e >> f >> x;
+int main() {
+    ui a, b, c, d, e, f, x;
+    cin >> a >> b >> c >> d >> e >> f >> x;
 
-  ui td = (x / (a + c)) * a * b + min(x % (a + c), a) * b;
-  ui ad = (x / (d + f)) * d * e + min(x % (d + f), d) * e;
+    ui td = (x / (a + c)) * a * b + min(x % (a + c), a) * b;
+    ui ad = (x / (d + f)) * d * e + min(x % (d + f), d) * e;
 
-  string ans = "Draw";
-  if (td > ad)
-    ans = "Takahashi";
-  else if (td < ad)
-    ans = "Aoki";
+    string ans = "Draw";
+    if (td > ad)
+        ans = "Takahashi";
+    else if (td < ad)
+        ans = "Aoki";
 
-  cout << ans << endl;
+    cout << ans << endl;
 
-  return 0;
+    return 0;
 }

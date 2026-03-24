@@ -4,20 +4,18 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  vector<string> s(n, "");
-  for (auto &ss : s)
-    cin >> ss;
+    vector<string> s(n, "");
+    for (auto& ss : s) cin >> ss;
 
-  ui x;
-  string y;
-  cin >> x >> y;
+    ui x;
+    string y;
+    cin >> x >> y;
 
-  cout << (s[x - 1] == y ? "Yes" : "No") << endl;
+    cout << (s[x - 1] == y ? "Yes" : "No") << endl;
 
-  return 0;
+    return 0;
 }

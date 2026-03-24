@@ -1,24 +1,22 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
-  int n;
-  cin >> n;
+int main() {
+    int n;
+    cin >> n;
 
-  int n1;
-  cin >> n1;
+    int n1;
+    cin >> n1;
 
-  int nx = 0;
-  for (int i = 0; i < n - 1; i++)
-  {
-    int p;
-    cin >> p;
-    nx = max(nx, p);
-  }
+    int nx = 0;
+    for (int i = 0; i < n - 1; i++) {
+        int p;
+        cin >> p;
+        nx = max(nx, p);
+    }
 
-  cout << max(0, nx + 1 - n1) << endl;
-  return 0;
+    cout << max(0, nx + 1 - n1) << endl;
+    return 0;
 }

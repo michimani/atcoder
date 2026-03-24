@@ -1,14 +1,13 @@
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
-  double a, b;
-  cin >> a >> b;
+int main() {
+    double a, b;
+    cin >> a >> b;
 
-  cout << fixed << setprecision(3) << b / a << endl;
+    cout << fixed << setprecision(3) << b / a << endl;
 
-  return 0;
+    return 0;
 }

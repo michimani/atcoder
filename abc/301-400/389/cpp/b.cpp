@@ -3,20 +3,18 @@
 using namespace std;
 using ull = unsigned long long;
 
-int main()
-{
-  ull x;
-  cin >> x;
+int main() {
+    ull x;
+    cin >> x;
 
-  ull ans = 2;
-  ull t = ans;
-  while (t != x)
-  {
-    ans++;
-    t = t * ans;
-  }
+    ull ans = 2;
+    ull t = ans;
+    while (t != x) {
+        ans++;
+        t = t * ans;
+    }
 
-  cout << ans << endl;
+    cout << ans << endl;
 
-  return 0;
+    return 0;
 }

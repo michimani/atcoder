@@ -2,15 +2,14 @@
 
 using namespace std;
 
-int main()
-{
-  double x;
-  cin >> x;
+int main() {
+    double x;
+    cin >> x;
 
-  x *= 100;
-  x /= 100;
+    x *= 100;
+    x /= 100;
 
-  cout << x << endl;
+    cout << x << endl;
 
-  return 0;
+    return 0;
 }

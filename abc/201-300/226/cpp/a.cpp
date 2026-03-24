@@ -2,11 +2,10 @@
 
 using namespace std;
 
-int main()
-{
-  double x;
-  cin >> x;
+int main() {
+    double x;
+    cin >> x;
 
-  cout << (int(x * 1000) + 500) / 1000 << endl;
-  return 0;
+    cout << (int(x * 1000) + 500) / 1000 << endl;
+    return 0;
 }

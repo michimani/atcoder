@@ -1,56 +1,50 @@
 #include <iostream>
-#include <vector>
 #include <map>
+#include <vector>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  map<char, vector<int>> lr;
-  for (; n--;)
-  {
-    int a;
-    char s;
-    cin >> a >> s;
+    map<char, vector<int>> lr;
+    for (; n--;) {
+        int a;
+        char s;
+        cin >> a >> s;
 
-    lr[s].push_back(a);
-  }
-
-  int l_min = 9900, r_min = 9900;
-
-  // L
-  for (int i = 1; i <= 100; i++)
-  {
-    int m = 0;
-    int p = i;
-    for (auto t : lr['L'])
-    {
-      m += abs(p - t);
-      p = t;
+        lr[s].push_back(a);
     }
 
-    l_min = min(l_min, m);
-  }
+    int l_min = 9900, r_min = 9900;
 
-  // R
-  for (int i = 1; i <= 100; i++)
-  {
-    int m = 0;
-    int p = i;
-    for (auto t : lr['R'])
-    {
-      m += abs(p - t);
-      p = t;
+    // L
+    for (int i = 1; i <= 100; i++) {
+        int m = 0;
+        int p = i;
+        for (auto t : lr['L']) {
+            m += abs(p - t);
+            p = t;
+        }
+
+        l_min = min(l_min, m);
     }
 
-    r_min = min(r_min, m);
-  }
+    // R
+    for (int i = 1; i <= 100; i++) {
+        int m = 0;
+        int p = i;
+        for (auto t : lr['R']) {
+            m += abs(p - t);
+            p = t;
+        }
 
-  cout << l_min + r_min << endl;
+        r_min = min(r_min, m);
+    }
 
-  return 0;
+    cout << l_min + r_min << endl;
+
+    return 0;
 }

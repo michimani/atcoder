@@ -3,28 +3,25 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n, k;
-  cin >> n >> k;
+int main() {
+    ui n, k;
+    cin >> n >> k;
 
-  ui o = k;
-  ui ans = 1;
-  for (; n--;)
-  {
-    ui a;
-    cin >> a;
+    ui o = k;
+    ui ans = 1;
+    for (; n--;) {
+        ui a;
+        cin >> a;
 
-    if (a > k)
-    {
-      ans++;
-      k = o;
+        if (a > k) {
+            ans++;
+            k = o;
+        }
+
+        k -= a;
     }
 
-    k -= a;
-  }
+    cout << ans << endl;
 
-  cout << ans << endl;
-
-  return 0;
+    return 0;
 }

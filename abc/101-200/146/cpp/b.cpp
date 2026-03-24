@@ -2,22 +2,19 @@
 
 using namespace std;
 
-int main()
-{
-  int n;
-  cin >> n;
-  string s;
-  cin >> s;
+int main() {
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
 
-  for (auto c : s)
-  {
-    int nc = int(c) + n;
-    if (nc > 90)
-      nc -= 26;
-    cout << char(nc);
-  }
+    for (auto c : s) {
+        int nc = int(c) + n;
+        if (nc > 90) nc -= 26;
+        cout << char(nc);
+    }
 
-  cout << endl;
+    cout << endl;
 
-  return 0;
+    return 0;
 }

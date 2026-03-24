@@ -1,40 +1,35 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 #include <unordered_set>
 
 using namespace std;
 using ui = unsigned int;
 using uius = unordered_set<ui>;
 
-int main()
-{
-  ui n, m;
-  cin >> n >> m;
-  uius a;
+int main() {
+    ui n, m;
+    cin >> n >> m;
+    uius a;
 
-  ui am;
-  for (; m--;)
-  {
-    cin >> am;
-    a.insert(am);
-  }
-
-  string ans = "";
-  ui c = 0;
-  for (ui i = 1; i <= n; i++)
-  {
-    if (!a.contains(i))
-    {
-      ans += to_string(i) + " ";
-      c++;
+    ui am;
+    for (; m--;) {
+        cin >> am;
+        a.insert(am);
     }
-  }
 
-  if (c > 0)
-    ans.pop_back();
+    string ans = "";
+    ui c = 0;
+    for (ui i = 1; i <= n; i++) {
+        if (!a.contains(i)) {
+            ans += to_string(i) + " ";
+            c++;
+        }
+    }
 
-  cout << c << endl;
-  cout << ans << endl;
+    if (c > 0) ans.pop_back();
 
-  return 0;
+    cout << c << endl;
+    cout << ans << endl;
+
+    return 0;
 }

@@ -1,28 +1,24 @@
-#include <iostream>
 #include <deque>
+#include <iostream>
 
 using namespace std;
 using ull = unsigned long long;
 
-int main()
-{
-  ull k;
-  cin >> k;
+int main() {
+    ull k;
+    cin >> k;
 
-  deque<int> ds;
-  while (k > 0)
-  {
-    ds.push_front(k % 2);
-    k /= 2;
-  }
+    deque<int> ds;
+    while (k > 0) {
+        ds.push_front(k % 2);
+        k /= 2;
+    }
 
-  if (ds.front() == 0)
-    ds.pop_front();
+    if (ds.front() == 0) ds.pop_front();
 
-  for (auto d : ds)
-    cout << d * 2;
+    for (auto d : ds) cout << d * 2;
 
-  cout << endl;
+    cout << endl;
 
-  return 0;
+    return 0;
 }

@@ -1,25 +1,22 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
-  int x, c;
-  cin >> x >> c;
+int main() {
+    int x, c;
+    cin >> x >> c;
 
-  int d = 0;
-  int y = (x / 1000) * 1000;
-  while (y > 0)
-  {
-    d = (y / 1000) * c;
-    if (x >= y + d)
-      break;
+    int d = 0;
+    int y = (x / 1000) * 1000;
+    while (y > 0) {
+        d = (y / 1000) * c;
+        if (x >= y + d) break;
 
-    y -= 1000;
-  }
+        y -= 1000;
+    }
 
-  cout << max(y, 0) << endl;
+    cout << max(y, 0) << endl;
 
-  return 0;
+    return 0;
 }

@@ -1,14 +1,13 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui a, d;
-  cin >> a >> d;
+int main() {
+    ui a, d;
+    cin >> a >> d;
 
-  cout << max((a + 1) * d, a * (d + 1)) << endl;
-  return 0;
+    cout << max((a + 1) * d, a * (d + 1)) << endl;
+    return 0;
 }

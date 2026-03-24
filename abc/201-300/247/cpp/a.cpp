@@ -1,14 +1,13 @@
-#include <iostream>
 #include <bitset>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
-  bitset<4> s;
-  cin >> s;
+int main() {
+    bitset<4> s;
+    cin >> s;
 
-  s >>= 1;
-  cout << s << endl;
-  return 0;
+    s >>= 1;
+    cout << s << endl;
+    return 0;
 }

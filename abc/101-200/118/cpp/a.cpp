@@ -2,12 +2,11 @@
 
 using namespace std;
 
-int main()
-{
-  int a, b;
-  cin >> a >> b;
+int main() {
+    int a, b;
+    cin >> a >> b;
 
-  cout << (b % a == 0 ? a + b : b - a) << endl;
+    cout << (b % a == 0 ? a + b : b - a) << endl;
 
-  return 0;
+    return 0;
 }

@@ -3,22 +3,20 @@
 
 using namespace std;
 
-int main()
-{
-  string d;
-  cin >> d;
+int main() {
+    string d;
+    cin >> d;
 
-  map<char, char> oppo = {
-      {'N', 'S'},
-      {'S', 'N'},
-      {'E', 'W'},
-      {'W', 'E'},
-  };
+    map<char, char> oppo = {
+        {'N', 'S'},
+        {'S', 'N'},
+        {'E', 'W'},
+        {'W', 'E'},
+    };
 
-  for (auto dd : d)
-    cout << oppo[dd];
+    for (auto dd : d) cout << oppo[dd];
 
-  cout << endl;
+    cout << endl;
 
-  return 0;
+    return 0;
 }

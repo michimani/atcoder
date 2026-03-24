@@ -4,23 +4,21 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  map<ui, bool> am;
-  ui ans = 0;
-  for (; n--;)
-  {
-    ui a;
-    cin >> a;
+    map<ui, bool> am;
+    ui ans = 0;
+    for (; n--;) {
+        ui a;
+        cin >> a;
 
-    ans += ui(am[a]);
-    am[a] = true;
-  }
+        ans += ui(am[a]);
+        am[a] = true;
+    }
 
-  cout << ans << endl;
+    cout << ans << endl;
 
-  return 0;
+    return 0;
 }

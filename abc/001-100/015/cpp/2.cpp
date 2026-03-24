@@ -1,28 +1,25 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  double d = 0;
-  double b = 0;
-  for (; n--;)
-  {
-    double a;
-    cin >> a;
+    double d = 0;
+    double b = 0;
+    for (; n--;) {
+        double a;
+        cin >> a;
 
-    if (a > 0)
-    {
-      d++;
-      b += a;
+        if (a > 0) {
+            d++;
+            b += a;
+        }
     }
-  }
 
-  cout << ceil(b / d) << endl;
-  return 0;
+    cout << ceil(b / d) << endl;
+    return 0;
 }

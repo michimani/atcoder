@@ -1,15 +1,14 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui a, b;
-  cin >> a >> b;
+int main() {
+    ui a, b;
+    cin >> a >> b;
 
-  cout << ui(pow((a + b), 2)) << endl;
+    cout << ui(pow((a + b), 2)) << endl;
 
-  return 0;
+    return 0;
 }

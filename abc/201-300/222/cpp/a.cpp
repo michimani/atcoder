@@ -3,15 +3,13 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  string n;
-  cin >> n;
+int main() {
+    string n;
+    cin >> n;
 
-  for (ui i = 0; i < 4 - n.length(); i++)
-    cout << '0';
+    for (ui i = 0; i < 4 - n.length(); i++) cout << '0';
 
-  cout << n << endl;
+    cout << n << endl;
 
-  return 0;
+    return 0;
 }

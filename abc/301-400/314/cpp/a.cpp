@@ -3,19 +3,19 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  string pi_d = "1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679";
+int main() {
+    string pi_d =
+        "14159265358979323846264338327950288419716939937510582097494459"
+        "23078164062862089986280348253421170679";
 
-  ui n;
-  cin >> n;
+    ui n;
+    cin >> n;
 
-  cout << "3.";
-  for (ui i = 0; i < n; i++)
-  {
-    cout << pi_d[i];
-  }
-  cout << endl;
+    cout << "3.";
+    for (ui i = 0; i < n; i++) {
+        cout << pi_d[i];
+    }
+    cout << endl;
 
-  return 0;
+    return 0;
 }

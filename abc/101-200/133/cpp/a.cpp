@@ -1,15 +1,14 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n, a, b;
-  cin >> n >> a >> b;
+int main() {
+    ui n, a, b;
+    cin >> n >> a >> b;
 
-  cout << min(a * n, b) << endl;
+    cout << min(a * n, b) << endl;
 
-  return 0;
+    return 0;
 }

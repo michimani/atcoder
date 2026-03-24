@@ -3,11 +3,10 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui x, y;
-  cin >> x >> y;
+int main() {
+    ui x, y;
+    cin >> x >> y;
 
-  cout << y / x << endl;
-  return 0;
+    cout << y / x << endl;
+    return 0;
 }

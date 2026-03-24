@@ -2,24 +2,20 @@
 
 using namespace std;
 
-int main()
-{
-  string s;
-  cin >> s;
+int main() {
+    string s;
+    cin >> s;
 
-  bool ex = false;
-  for (auto c : s)
-  {
-    if (c == '|')
-    {
-      ex = !ex;
-      continue;
+    bool ex = false;
+    for (auto c : s) {
+        if (c == '|') {
+            ex = !ex;
+            continue;
+        }
+
+        if (!ex) cout << c;
     }
 
-    if (!ex)
-      cout << c;
-  }
-
-  cout << endl;
-  return 0;
+    cout << endl;
+    return 0;
 }

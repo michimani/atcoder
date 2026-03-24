@@ -3,19 +3,17 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  string a = "atcoder";
+int main() {
+    string a = "atcoder";
 
-  ui l, r;
-  cin >> l >> r;
+    ui l, r;
+    cin >> l >> r;
 
-  for (ui i = l - 1; i < r; i++)
-  {
-    cout << a[i];
-  }
+    for (ui i = l - 1; i < r; i++) {
+        cout << a[i];
+    }
 
-  cout << endl;
+    cout << endl;
 
-  return 0;
+    return 0;
 }

@@ -3,13 +3,12 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  ui ans = n / 3;
-  cout << ans << endl;
+    ui ans = n / 3;
+    cout << ans << endl;
 
-  return 0;
+    return 0;
 }

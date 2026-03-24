@@ -1,50 +1,43 @@
 #include <iostream>
-#include <vector>
 #include <map>
+#include <vector>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n, m;
-  cin >> n >> m;
+int main() {
+    ui n, m;
+    cin >> n >> m;
 
-  map<ui, ui> ac;
-  vector<ui> a(n);
-  for (auto &aa : a)
-  {
-    cin >> aa;
-    ac[aa]++;
-  }
-
-  map<ui, ui> dc;
-  ui b;
-  for (; m--;)
-  {
-    cin >> b;
-    if (ac[b] > 0)
-    {
-      ac[b]--;
-      dc[b]++;
+    map<ui, ui> ac;
+    vector<ui> a(n);
+    for (auto& aa : a) {
+        cin >> aa;
+        ac[aa]++;
     }
-  }
 
-  string ans = "";
-  for (auto aa : a)
-  {
-    if (dc[aa] > 0)
-    {
-      dc[aa]--;
-      continue;
+    map<ui, ui> dc;
+    ui b;
+    for (; m--;) {
+        cin >> b;
+        if (ac[b] > 0) {
+            ac[b]--;
+            dc[b]++;
+        }
     }
-    ans += to_string(aa) + " ";
-  }
 
-  if (ans.length() > 0)
-    ans.pop_back();
+    string ans = "";
+    for (auto aa : a) {
+        if (dc[aa] > 0) {
+            dc[aa]--;
+            continue;
+        }
+        ans += to_string(aa) + " ";
+    }
 
-  cout << ans << endl;
+    if (ans.length() > 0) ans.pop_back();
 
-  return 0;
+    cout << ans << endl;
+
+    return 0;
 }

@@ -1,14 +1,13 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
-  int n, x;
-  cin >> n >> x;
+int main() {
+    int n, x;
+    cin >> n >> x;
 
-  cout << min(x - 1, n - x) << endl;
+    cout << min(x - 1, n - x) << endl;
 
-  return 0;
+    return 0;
 }

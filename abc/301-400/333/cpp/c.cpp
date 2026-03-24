@@ -1,42 +1,36 @@
-#include <iostream>
-#include <vector>
 #include <algorithm>
+#include <iostream>
 #include <map>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
-  vector<unsigned long long> choices = {1};
-  for (unsigned int d = 1; d <= 12; d++)
-  {
-    choices.push_back(choices[d - 1] * 10 + 1);
-  }
-
-  vector<unsigned long long> list;
-  map<unsigned long long, bool> exists;
-  for (auto &c : choices)
-  {
-    for (auto &cc : choices)
-    {
-      for (auto &ccc : choices)
-      {
-        unsigned long long num = c + cc + ccc;
-        if (!exists[num])
-        {
-          list.push_back(num);
-          exists[num] = true;
-        }
-      }
+int main() {
+    vector<unsigned long long> choices = {1};
+    for (unsigned int d = 1; d <= 12; d++) {
+        choices.push_back(choices[d - 1] * 10 + 1);
     }
-  }
 
-  sort(list.begin(), list.end());
+    vector<unsigned long long> list;
+    map<unsigned long long, bool> exists;
+    for (auto& c : choices) {
+        for (auto& cc : choices) {
+            for (auto& ccc : choices) {
+                unsigned long long num = c + cc + ccc;
+                if (!exists[num]) {
+                    list.push_back(num);
+                    exists[num] = true;
+                }
+            }
+        }
+    }
 
-  unsigned int n;
-  cin >> n;
+    sort(list.begin(), list.end());
 
-  cout << list[n - 1] << endl;
+    unsigned int n;
+    cin >> n;
 
-  return 0;
+    cout << list[n - 1] << endl;
+
+    return 0;
 }

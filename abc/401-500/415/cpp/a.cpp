@@ -3,24 +3,22 @@
 
 using namespace std;
 using ui = unsigned int;
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  set<ui> a;
+    set<ui> a;
 
-  for (; n--;)
-  {
-    ui aa;
-    cin >> aa;
-    a.insert(aa);
-  }
+    for (; n--;) {
+        ui aa;
+        cin >> aa;
+        a.insert(aa);
+    }
 
-  ui x;
-  cin >> x;
+    ui x;
+    cin >> x;
 
-  cout << (a.contains(x) ? "Yes" : "No") << endl;
+    cout << (a.contains(x) ? "Yes" : "No") << endl;
 
-  return 0;
+    return 0;
 }

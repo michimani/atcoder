@@ -2,12 +2,11 @@
 
 using namespace std;
 
-int main()
-{
-  int n, w;
-  cin >> n >> w;
+int main() {
+    int n, w;
+    cin >> n >> w;
 
-  cout << n / w << endl;
+    cout << n / w << endl;
 
-  return 0;
+    return 0;
 }

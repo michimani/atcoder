@@ -2,20 +2,16 @@
 
 using namespace std;
 
-int main()
-{
-  string s;
-  cin >> s;
+int main() {
+    string s;
+    cin >> s;
 
-  if (s[s.length() - 1] == 's')
-  {
-    s += "es";
-  }
-  else
-  {
-    s += "s";
-  }
+    if (s[s.length() - 1] == 's') {
+        s += "es";
+    } else {
+        s += "s";
+    }
 
-  cout << s << endl;
-  return 0;
+    cout << s << endl;
+    return 0;
 }

@@ -1,23 +1,21 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ull = unsigned long long;
 
-int main()
-{
-  ull h;
-  cin >> h;
+int main() {
+    ull h;
+    cin >> h;
 
-  ull i = 0;
-  ull k = 0;
-  while (k <= h)
-  {
-    k += pow(2, i);
-    i++;
-  }
+    ull i = 0;
+    ull k = 0;
+    while (k <= h) {
+        k += pow(2, i);
+        i++;
+    }
 
-  cout << i << endl;
+    cout << i << endl;
 
-  return 0;
+    return 0;
 }

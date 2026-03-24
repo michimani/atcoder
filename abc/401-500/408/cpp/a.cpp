@@ -3,27 +3,24 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n, s;
-  cin >> n >> s;
+int main() {
+    ui n, s;
+    cin >> n >> s;
 
-  ui p = 0;
-  for (; n--;)
-  {
-    ui t;
-    cin >> t;
+    ui p = 0;
+    for (; n--;) {
+        ui t;
+        cin >> t;
 
-    if (t - p > s)
-    {
-      cout << "No" << endl;
-      return 0;
+        if (t - p > s) {
+            cout << "No" << endl;
+            return 0;
+        }
+
+        p = t;
     }
 
-    p = t;
-  }
+    cout << "Yes" << endl;
 
-  cout << "Yes" << endl;
-
-  return 0;
+    return 0;
 }

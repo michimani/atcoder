@@ -2,11 +2,10 @@
 
 using namespace std;
 
-int main()
-{
-  double d;
-  cin >> d;
+int main() {
+    double d;
+    cin >> d;
 
-  cout << d / 100 << endl;
-  return 0;
+    cout << d / 100 << endl;
+    return 0;
 }

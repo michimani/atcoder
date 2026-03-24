@@ -1,28 +1,26 @@
-#include <iostream>
-#include <bitset>
 #include <algorithm>
+#include <bitset>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n, x;
-  cin >> n >> x;
+int main() {
+    ui n, x;
+    cin >> n >> x;
 
-  string z = bitset<32>(x).to_string();
-  reverse(z.begin(), z.end());
+    string z = bitset<32>(x).to_string();
+    reverse(z.begin(), z.end());
 
-  ui ans = 0;
-  for (ui i = 0; i < n; i++)
-  {
-    ui a;
-    cin >> a;
+    ui ans = 0;
+    for (ui i = 0; i < n; i++) {
+        ui a;
+        cin >> a;
 
-    ans += a * ui(z[i] == '1');
-  }
+        ans += a * ui(z[i] == '1');
+    }
 
-  cout << ans << endl;
+    cout << ans << endl;
 
-  return 0;
+    return 0;
 }

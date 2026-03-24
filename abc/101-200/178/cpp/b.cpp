@@ -1,15 +1,14 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ll = long long;
 
-int main()
-{
-  ll a, b, c, d;
-  cin >> a >> b >> c >> d;
+int main() {
+    ll a, b, c, d;
+    cin >> a >> b >> c >> d;
 
-  cout << max(a * c, max(a * d, max(b * c, b * d))) << endl;
+    cout << max(a * c, max(a * d, max(b * c, b * d))) << endl;
 
-  return 0;
+    return 0;
 }

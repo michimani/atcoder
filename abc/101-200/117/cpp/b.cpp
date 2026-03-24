@@ -1,28 +1,26 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  ui mx = 0;
-  ui t = 0;
-  for (; n--;)
-  {
-    ui l;
-    cin >> l;
+    ui mx = 0;
+    ui t = 0;
+    for (; n--;) {
+        ui l;
+        cin >> l;
 
-    t += l;
-    mx = max(mx, l);
-  }
+        t += l;
+        mx = max(mx, l);
+    }
 
-  t -= mx;
+    t -= mx;
 
-  cout << (mx < t ? "Yes" : "No") << endl;
+    cout << (mx < t ? "Yes" : "No") << endl;
 
-  return 0;
+    return 0;
 }

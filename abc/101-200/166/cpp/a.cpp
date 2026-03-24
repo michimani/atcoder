@@ -2,11 +2,10 @@
 
 using namespace std;
 
-int main()
-{
-  string s;
-  cin >> s;
+int main() {
+    string s;
+    cin >> s;
 
-  cout << (s == "ABC" ? "ARC" : "ABC") << endl;
-  return 0;
+    cout << (s == "ABC" ? "ARC" : "ABC") << endl;
+    return 0;
 }

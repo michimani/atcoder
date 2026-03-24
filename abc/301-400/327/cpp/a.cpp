@@ -2,22 +2,19 @@
 
 using namespace std;
 
-int main()
-{
-  int n;
-  string s;
-  cin >> n >> s;
+int main() {
+    int n;
+    string s;
+    cin >> n >> s;
 
-  char prev = '.';
-  for (auto &c : s)
-  {
-    if ((prev == 'a' && c == 'b') || (prev == 'b' && c == 'a'))
-    {
-      cout << "Yes" << endl;
-      return 0;
+    char prev = '.';
+    for (auto& c : s) {
+        if ((prev == 'a' && c == 'b') || (prev == 'b' && c == 'a')) {
+            cout << "Yes" << endl;
+            return 0;
+        }
+        prev = c;
     }
-    prev = c;
-  }
 
-  cout << "No" << endl;
+    cout << "No" << endl;
 }

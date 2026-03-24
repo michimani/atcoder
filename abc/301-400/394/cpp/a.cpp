@@ -2,16 +2,14 @@
 
 using namespace std;
 
-int main()
-{
-  string s;
-  cin >> s;
+int main() {
+    string s;
+    cin >> s;
 
-  for (auto c : s)
-    if (c == '2')
-      cout << c;
+    for (auto c : s)
+        if (c == '2') cout << c;
 
-  cout << endl;
+    cout << endl;
 
-  return 0;
+    return 0;
 }

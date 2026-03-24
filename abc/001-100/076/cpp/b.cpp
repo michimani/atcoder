@@ -1,19 +1,17 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n, k;
-  cin >> n >> k;
+int main() {
+    ui n, k;
+    cin >> n >> k;
 
-  ui ans = 1;
-  for (; n--;)
-    ans = min(ans * 2, ans + k);
+    ui ans = 1;
+    for (; n--;) ans = min(ans * 2, ans + k);
 
-  cout << ans << endl;
+    cout << ans << endl;
 
-  return 0;
+    return 0;
 }

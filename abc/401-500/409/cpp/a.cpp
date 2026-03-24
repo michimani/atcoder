@@ -3,22 +3,19 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  string t, a;
+int main() {
+    ui n;
+    string t, a;
 
-  cin >> n >> t >> a;
-  for (ui i = 0; i < n; i++)
-  {
-    if (t[i] == 'o' && a[i] == 'o')
-    {
-      cout << "Yes" << endl;
-      return 0;
+    cin >> n >> t >> a;
+    for (ui i = 0; i < n; i++) {
+        if (t[i] == 'o' && a[i] == 'o') {
+            cout << "Yes" << endl;
+            return 0;
+        }
     }
-  }
 
-  cout << "No" << endl;
+    cout << "No" << endl;
 
-  return 0;
+    return 0;
 }

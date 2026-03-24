@@ -2,17 +2,15 @@
 
 using namespace std;
 
-int main()
-{
-  int ans = 0;
-  for (int i = 0; i < 3; i++)
-  {
-    int s, e;
+int main() {
+    int ans = 0;
+    for (int i = 0; i < 3; i++) {
+        int s, e;
 
-    cin >> s >> e;
+        cin >> s >> e;
 
-    ans += (s * e / 10);
-  }
+        ans += (s * e / 10);
+    }
 
-  cout << ans << endl;
+    cout << ans << endl;
 }

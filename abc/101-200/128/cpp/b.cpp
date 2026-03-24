@@ -4,30 +4,26 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  ui n;
-  cin >> n;
+int main() {
+    ui n;
+    cin >> n;
 
-  map<string, map<ui, ui>> spi;
-  for (ui i = 1; i <= n; i++)
-  {
-    string s;
-    ui p;
-    cin >> s >> p;
+    map<string, map<ui, ui>> spi;
+    for (ui i = 1; i <= n; i++) {
+        string s;
+        ui p;
+        cin >> s >> p;
 
-    spi[s][p] = i;
-  }
-
-  for (auto si : spi)
-  {
-    auto pi = si.second.rbegin();
-    while (pi != si.second.rend())
-    {
-      cout << pi->second << endl;
-      pi++;
+        spi[s][p] = i;
     }
-  }
 
-  return 0;
+    for (auto si : spi) {
+        auto pi = si.second.rbegin();
+        while (pi != si.second.rend()) {
+            cout << pi->second << endl;
+            pi++;
+        }
+    }
+
+    return 0;
 }

@@ -2,12 +2,11 @@
 
 using namespace std;
 
-int main()
-{
-  char x, y;
-  cin >> x >> y;
+int main() {
+    char x, y;
+    cin >> x >> y;
 
-  cout << (x < y ? "<" : (x > y ? ">" : "=")) << endl;
+    cout << (x < y ? "<" : (x > y ? ">" : "=")) << endl;
 
-  return 0;
+    return 0;
 }

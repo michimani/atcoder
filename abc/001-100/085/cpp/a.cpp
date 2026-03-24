@@ -3,21 +3,18 @@
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  for (ui i = 0; i < 10; i++)
-  {
-    char c;
-    cin >> c;
+int main() {
+    for (ui i = 0; i < 10; i++) {
+        char c;
+        cin >> c;
 
-    if (i == 3)
-    {
-      c = '8';
+        if (i == 3) {
+            c = '8';
+        }
+
+        cout << c;
     }
 
-    cout << c;
-  }
-
-  cout << endl;
-  return 0;
+    cout << endl;
+    return 0;
 }

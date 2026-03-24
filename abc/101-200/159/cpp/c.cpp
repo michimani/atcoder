@@ -1,18 +1,17 @@
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
 using namespace std;
 using ui = unsigned int;
 
-int main()
-{
-  double l;
-  cin >> l;
+int main() {
+    double l;
+    cin >> l;
 
-  double a = l / 3;
-  double b = l / 3;
-  double c = l - a - b;
+    double a = l / 3;
+    double b = l / 3;
+    double c = l - a - b;
 
-  cout << fixed << setprecision(7) << a * b * c << endl;
-  return 0;
+    cout << fixed << setprecision(7) << a * b * c << endl;
+    return 0;
 }
