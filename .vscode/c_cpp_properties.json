@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "devcontainer-clang-21",
+      "name": "linux-clang-arm64",
       "includePath": [
         "${workspaceFolder}/**"
       ],
