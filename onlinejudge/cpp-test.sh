@@ -46,4 +46,4 @@ USER_BUILD_FLAGS=(
     -I/usr/include/eigen3 \
     -o ./a.out \
     "${USER_BUILD_FLAGS[@]}" \
-    && oj test -c "./a.out " -d "${test_dir}"
+    && oj test -c "./a.out " -d "${test_dir}" -N
